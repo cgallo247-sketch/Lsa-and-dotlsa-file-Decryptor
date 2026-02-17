@@ -16,7 +16,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MAX_FILE_SIZE = 10 * 1024 * 1024  # 10 MB
+MAX_FILE_SIZE = 800 * 1024 * 1024  # 800 MB
 ALLOWED_EXTENSIONS = {'lsa', 'lsav'}
 
 @app.post('/api/decrypt')
@@ -57,3 +57,4 @@ async def decrypt(file: UploadFile = File(...)):
 @app.get('/')
 def home():
     return {"message": "MIUI LSA Decryptor FastAPI Backend Running"}
+
